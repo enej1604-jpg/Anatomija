@@ -20,7 +20,13 @@ https://claude.ai/artifact/DHnTZiPokgbPsotW8aSkhf — ta repo je varnostna kopij
 3. **Izpit**: izbirna vprašanja, kratki odgovori, **skice struktur** in **latinska imena** – vadi risanje (celica, humerus, vretence).
 4. Pri mišicah vedno isti vrstni red: **origo → insertio → gib → oživčenje**.
 
-## PDF za učenje
+## Interaktivni atlas (glavno gradivo)
+
+**https://claude.ai/artifact/MkYBiG2o6T8TJRC5BCoNzz** · lokalna kopija: [atlas/index.html](atlas/index.html)
+
+Vsi zapiski predavanj 1–4 s 175 slikami, ki stojijo ob besedilu, ki ga razlagajo (ne v ločenem albumu). Oznake so ponovno preverjene na vsaki sliki. Kviz način skrije imena (klikni vprašaj za odgovor), gumb »Pokrij tabele« skrije pomene za ponavljanje, barvni gumbi filtrirajo vrste struktur.
+
+## PDF za učenje (starejša verzija)
 
 **[pdf/Anatomija-zapiski-1-4.pdf](pdf/Anatomija-zapiski-1-4.pdf)** – vsi zapiski predavanj 1–4 (136 strani, A4) s slikovnim atlasom: 176 slik, na vsaki so s črtami označene strukture, ki jih moraš znati. Barva črte pove vrsto strukture (kost, mišica, sklep/vez, živec/žila, tkivo, smer).
 

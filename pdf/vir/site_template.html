@@ -1,0 +1,220 @@
+<title>Anatomija s histologijo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=IBM+Plex+Sans+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* Layout: fixed chapter rail on the left, one reading column; diagrams sit inside the text they explain */
+:root{
+  --bg:#fbfbf9; --panel:#f2f3f0; --ink:#1c2024; --ink2:#5a6067; --rule:#dde0dc; --soft:#eef0ec;
+  --a1:#2a62a8; --a2:#a5651c; --a3:#b23a2e; --a4:#2d7356;
+  --c-r:#2a62a8; --c-k:#a86a12; --c-m:#c0362c; --c-s:#0b8578; --c-z:#7a3d9e; --c-t:#3c7a1f; --c-o:#55606b;
+  --halo:#ffffff; --frame:#d6d9d4;
+  --serif:'Source Serif 4',Georgia,'Times New Roman',serif;
+  --ui:'IBM Plex Sans Condensed','Arial Narrow',Arial,sans-serif;
+  --side:272px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#14171a; --panel:#1b1f23; --ink:#e6e8e9; --ink2:#a3a9ae; --rule:#2c3237; --soft:#1f2428;
+  --a1:#6fa3e6; --a2:#dca15a; --a3:#ec7c6f; --a4:#62b892;
+  --c-r:#79abef; --c-k:#e3a94f; --c-m:#f07c70; --c-s:#3fc4b3; --c-z:#bb8ae0; --c-t:#86c45e; --c-o:#a7b0b9;
+  --halo:#14171a; --frame:#3a4046; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#14171a; --panel:#1b1f23; --ink:#e6e8e9; --ink2:#a3a9ae; --rule:#2c3237; --soft:#1f2428;
+  --a1:#6fa3e6; --a2:#dca15a; --a3:#ec7c6f; --a4:#62b892;
+  --c-r:#79abef; --c-k:#e3a94f; --c-m:#f07c70; --c-s:#3fc4b3; --c-z:#bb8ae0; --c-t:#86c45e; --c-o:#a7b0b9;
+  --halo:#14171a; --frame:#3a4046; color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:64px}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{background:var(--bg);color:var(--ink);font:400 17px/1.6 var(--serif);margin:0}
+.ch1{--a:var(--a1)}.ch2{--a:var(--a2)}.ch3{--a:var(--a3)}.ch4{--a:var(--a4)}
+
+/* top bar */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);border-bottom:1px solid var(--rule);
+  display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;padding:10px 16px;font-family:var(--ui)}
+.bar .brand{font-weight:700;font-size:15px;letter-spacing:.02em;margin-right:auto;display:flex;align-items:center;gap:10px}
+.bar .brand small{font-weight:500;color:var(--ink2);font-size:13px}
+.btn{font:600 13px var(--ui);border:1px solid var(--rule);background:var(--panel);color:var(--ink);border-radius:6px;padding:6px 11px;cursor:pointer}
+.btn:hover{border-color:var(--ink2)}
+.btn[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.btn:focus-visible,.chip:focus-visible,.lab:focus-visible,a:focus-visible{outline:2px solid var(--a1);outline-offset:2px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font:500 12.5px var(--ui);display:inline-flex;align-items:center;gap:6px;border:1px solid var(--rule);background:transparent;color:var(--ink);border-radius:20px;padding:4px 10px;cursor:pointer}
+.chip i,.lg i{width:9px;height:9px;border-radius:50%;background:var(--cc);display:inline-block}
+.chip[aria-pressed="false"]{opacity:.45;text-decoration:line-through}
+#navbtn{display:none}
+
+/* shell */
+.shell{display:grid;grid-template-columns:var(--side) minmax(0,1fr);max-width:1240px;margin:0 auto}
+nav.side{position:sticky;top:56px;height:calc(100vh - 56px);overflow:auto;padding:22px 14px 40px 16px;border-right:1px solid var(--rule);font-family:var(--ui);font-size:13.5px}
+nav.side ol{list-style:none;margin:0;padding:0}
+.nl{margin-bottom:16px}
+.nl>a{display:flex;gap:10px;align-items:baseline;font-weight:700;font-size:15px;color:var(--ink);text-decoration:none;padding:4px 0}
+.nl>a b{color:var(--a);font-size:20px;min-width:18px}
+.nl ol a{display:block;color:var(--ink2);text-decoration:none;padding:3px 0 3px 28px;line-height:1.3;border-left:2px solid transparent}
+.nl ol a:hover{color:var(--ink)}
+.nl ol a.on{color:var(--a);border-left-color:var(--a);font-weight:600}
+main{padding:28px 32px 120px;min-width:0}
+.read{max-width:860px;margin:0 auto}
+
+/* intro */
+.intro{border:1px solid var(--rule);background:var(--panel);border-radius:10px;padding:18px 20px;margin-bottom:34px;font-family:var(--ui);font-size:14.5px;line-height:1.5;color:var(--ink2)}
+.intro h2{font:700 22px/1.2 var(--serif);color:var(--ink);margin:0 0 8px}
+.intro ul{margin:8px 0 0;padding-left:18px}
+.intro b{color:var(--ink)}
+
+/* chapter text */
+.chapter{padding-top:12px;margin-bottom:56px}
+.ch-h{display:flex;gap:18px;align-items:flex-end;border-bottom:3px solid var(--a);padding-bottom:14px;margin-bottom:22px}
+.ch-n{font:700 76px/.8 var(--serif);color:var(--a)}
+.ch-k{font:600 12px var(--ui);letter-spacing:.14em;text-transform:uppercase;color:var(--a);margin:0}
+.ch-h h1{font:700 36px/1.05 var(--serif);margin:4px 0 4px;text-wrap:balance}
+.ch-s{margin:0;color:var(--ink2);font-style:italic}
+h2{font:700 24px/1.2 var(--serif);margin:42px 0 10px;text-wrap:balance}
+h2 .sn{color:var(--a);margin-right:12px}
+h2.gl{background:var(--a);color:var(--bg);padding:10px 14px;border-radius:8px;font-size:21px}
+h3{font:600 19px/1.3 var(--serif);color:var(--a);margin:28px 0 6px}
+h4{font:600 13px var(--ui);letter-spacing:.08em;text-transform:uppercase;margin:20px 0 4px}
+p{margin:0 0 12px}
+.lede{font-size:18.5px;color:var(--ink2);font-style:italic}
+ul,ol{padding-left:24px;margin:0 0 14px}
+li{margin:3px 0}
+.read ul>li::marker{color:var(--a)}
+.read ol>li::marker{color:var(--a);font:700 15px var(--ui)}
+strong{font-weight:700}
+.tw{overflow-x:auto;margin:10px 0 20px}
+table{border-collapse:collapse;width:100%;font:400 14.5px/1.4 var(--ui)}
+th{text-align:left;font-weight:600;background:var(--soft);border-bottom:2px solid var(--a);padding:8px 10px}
+td{padding:7px 10px;border-bottom:1px solid var(--rule);vertical-align:top}
+table.gls td:first-child{font-style:italic;color:var(--a);font-weight:500;width:38%}
+body.cover table.gls td:not(:first-child){color:transparent;background:var(--soft);border-radius:3px;cursor:pointer;user-select:none}
+body.cover table.gls td.rev{color:inherit;background:none}
+
+/* figures */
+.fig{margin:22px -40px 30px;padding:14px 0 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.fsc{overflow-x:auto}
+.fig svg{display:block;width:100%;min-width:660px;height:auto}
+.frame{fill:none;stroke:var(--frame);stroke-width:1}
+.lab{cursor:pointer;outline:none}
+.lab .halo{fill:none;stroke:var(--halo);stroke-width:4;stroke-linejoin:round;opacity:.9}
+.lab .ln{fill:none;stroke:var(--lc);stroke-width:1.4;stroke-linejoin:round}
+.lab .dot{fill:var(--lc);stroke:var(--halo);stroke-width:1.6}
+.lab .tx{font:500 15px var(--ui);fill:var(--ink)}
+.lab .la{fill:var(--lc);font-weight:600}
+.lab .q{display:none}
+.lab .q rect{fill:var(--lc)}
+.lab .q text{font:700 13px var(--ui);fill:var(--halo)}
+.fig svg:hover .lab:not(:hover){opacity:.28}
+.lab:hover .ln,.lab:focus .ln{stroke-width:2.6}
+.lab:hover .dot,.lab:focus .dot{r:6}
+.quiz .lab .tx,.fig.quiz .lab .tx{display:none}
+.quiz .lab .q,.fig.quiz .lab .q{display:inline}
+.quiz .lab.rev .tx,.fig.quiz .lab.rev .tx{display:inline}
+.quiz .lab.rev .q,.fig.quiz .lab.rev .q{display:none}
+.hide-r .lab[data-c="r"],.hide-k .lab[data-c="k"],.hide-m .lab[data-c="m"],.hide-s .lab[data-c="s"],.hide-z .lab[data-c="z"],.hide-t .lab[data-c="t"],.hide-o .lab[data-c="o"]{display:none}
+figcaption{padding:10px 40px 14px;font:400 14.5px/1.45 var(--ui);color:var(--ink2)}
+.fn{font-weight:700;color:var(--a);margin-right:4px}
+.lgs{display:inline-flex;flex-wrap:wrap;gap:4px 12px;margin-left:8px;vertical-align:1px}
+.lg{display:inline-flex;align-items:center;gap:5px;font-size:12.5px}
+[data-c="r"]{--cc:var(--c-r)}[data-c="k"]{--cc:var(--c-k)}[data-c="m"]{--cc:var(--c-m)}[data-c="s"]{--cc:var(--c-s)}[data-c="z"]{--cc:var(--c-z)}[data-c="t"]{--cc:var(--c-t)}[data-c="o"]{--cc:var(--c-o)}
+.ftools{display:flex;gap:8px;margin-top:8px}
+.ftools .btn{font-size:12px;padding:4px 9px}
+
+/* lightbox */
+#lb{position:fixed;inset:0;z-index:50;background:var(--bg);display:flex;flex-direction:column}
+#lb[hidden]{display:none!important}
+#lb .lbt{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:calc(10px + env(safe-area-inset-top,0px)) 16px 10px;border-bottom:1px solid var(--rule);font-family:var(--ui)}
+#lb .lbb{flex:1;overflow:auto;padding:16px}
+#lb svg{width:100%;min-width:900px;height:auto}
+
+@media (max-width:980px){
+  .shell{grid-template-columns:1fr}
+  nav.side{position:fixed;inset:56px 0 0 0;z-index:15;background:var(--bg);height:auto;display:none;border-right:0}
+  body.navopen nav.side{display:block}
+  #navbtn{display:inline-block}
+  main{padding:20px 16px 100px}
+  .fig{margin:20px 0 28px}
+  figcaption{padding:10px 4px 14px}
+  .chips{order:3;width:100%;flex-wrap:nowrap;overflow-x:auto;padding-bottom:2px}
+  .chip{flex:none}
+  .bar .brand small{display:none}
+  .bar{gap:8px;padding:8px 16px}
+}
+@media (max-width:520px){ .ch-n{font-size:56px} .ch-h h1{font-size:28px} body{font-size:16.5px} }
+</style>
+
+<div class="bar">
+  <div class="brand"><button class="btn" id="navbtn" type="button" aria-expanded="false">Vsebina</button>Anatomija s histologijo <small>predavanja 1–4 · {{TOTAL}} označenih slik</small></div>
+  <button class="btn" id="quiz" type="button" aria-pressed="false">Kviz: skrij oznake</button>
+  <button class="btn" id="cover" type="button" aria-pressed="false">Pokrij tabele</button>
+  <div class="chips" role="group" aria-label="Prikaži vrste struktur">
+    <button class="chip" type="button" data-c="k" aria-pressed="true"><i></i>kost</button>
+    <button class="chip" type="button" data-c="m" aria-pressed="true"><i></i>mišica</button>
+    <button class="chip" type="button" data-c="s" aria-pressed="true"><i></i>sklep / vez</button>
+    <button class="chip" type="button" data-c="z" aria-pressed="true"><i></i>živec / žila</button>
+    <button class="chip" type="button" data-c="t" aria-pressed="true"><i></i>tkivo / celica</button>
+    <button class="chip" type="button" data-c="r" aria-pressed="true"><i></i>smer / ravnina</button>
+    <button class="chip" type="button" data-c="o" aria-pressed="true"><i></i>drugo</button>
+  </div>
+</div>
+
+<div class="shell">
+  <nav class="side" aria-label="Poglavja"><ol>{{NAV}}</ol></nav>
+  <main><div class="read">
+    <section class="intro">
+      <h2>Kako uporabljati</h2>
+      Vsaka slika stoji ob besedilu, ki ga razlaga. Črta s piko kaže točno strukturo; barva pove, kaj je.
+      <ul>
+        <li><b>Premakni miško na oznako</b> – ostale oznake zbledijo, da vidiš, kam kaže.</li>
+        <li><b>Kviz: skrij oznake</b> – namesto imen so vprašaji. Klikni vprašaj in preveri, ali si vedel. Isto lahko vklopiš samo za eno sliko.</li>
+        <li><b>Pokrij tabele</b> – skrije pomene v tabelah za ponavljanje; klikni celico, da jo odkriješ.</li>
+        <li><b>Barvni gumbi</b> zgoraj skrijejo vrsto struktur, npr. pusti samo mišice.</li>
+        <li>Mišice se uči vedno v istem vrstnem redu: <b>origo → insertio → gib → oživčenje</b>.</li>
+      </ul>
+    </section>
+    {{CHAPTERS}}
+  </div></main>
+</div>
+
+<div id="lb" hidden role="dialog" aria-modal="true" aria-label="Povečana slika">
+  <div class="lbt"><span id="lbcap"></span><span style="display:flex;gap:8px"><button class="btn" id="lbquiz" type="button">Skrij oznake</button><button class="btn" id="lbx" type="button">Zapri</button></span></div>
+  <div class="lbb"></div>
+</div>
+
+<script>
+(function(){
+  var body=document.body, store={get:function(k){try{return localStorage.getItem(k)}catch(e){return null}},set:function(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
+  function press(btn,on){btn.setAttribute('aria-pressed',on?'true':'false')}
+  var q=document.getElementById('quiz');
+  function setQuiz(on){body.classList.toggle('quiz',on);press(q,on);q.textContent=on?'Kviz: pokaži oznake':'Kviz: skrij oznake';
+    if(!on)document.querySelectorAll('.lab.rev').forEach(function(l){l.classList.remove('rev')});store.set('quiz',on?'1':'0')}
+  q.addEventListener('click',function(){setQuiz(!body.classList.contains('quiz'))});
+  if(store.get('quiz')==='1')setQuiz(true);
+  var cv=document.getElementById('cover');
+  cv.addEventListener('click',function(){var on=!body.classList.contains('cover');body.classList.toggle('cover',on);press(cv,on);
+    if(!on)document.querySelectorAll('td.rev').forEach(function(t){t.classList.remove('rev')})});
+  document.addEventListener('click',function(e){
+    var td=e.target.closest('table.gls td');if(td&&body.classList.contains('cover'))td.classList.toggle('rev');
+    var lab=e.target.closest('.lab');if(lab){var f=lab.closest('.fig,#lb');if(body.classList.contains('quiz')||(f&&f.classList.contains('quiz')))lab.classList.toggle('rev')}
+  });
+  document.addEventListener('keydown',function(e){if((e.key==='Enter'||e.key===' ')&&e.target.classList&&e.target.classList.contains('lab')){e.preventDefault();e.target.dispatchEvent(new MouseEvent('click',{bubbles:true}))}
+    if(e.key==='Escape')closeLb()});
+  document.querySelectorAll('.chip').forEach(function(c){c.addEventListener('click',function(){var on=c.getAttribute('aria-pressed')!=='true';press(c,on);body.classList.toggle('hide-'+c.dataset.c,!on)})});
+  document.querySelectorAll('.b-quiz').forEach(function(b){b.addEventListener('click',function(){var f=b.closest('.fig');var on=!f.classList.contains('quiz');f.classList.toggle('quiz',on);
+    b.textContent=on?'Pokaži oznake':'Skrij oznake';if(!on)f.querySelectorAll('.lab.rev').forEach(function(l){l.classList.remove('rev')})})});
+  var lb=document.getElementById('lb'),lbb=lb.querySelector('.lbb'),lbq=document.getElementById('lbquiz');
+  function closeLb(){if(!lb.hidden){lb.hidden=true;lbb.innerHTML='';body.style.overflow=''}}
+  document.getElementById('lbx').addEventListener('click',closeLb);
+  lbq.addEventListener('click',function(){var on=!lb.classList.contains('quiz');lb.classList.toggle('quiz',on);lbq.textContent=on?'Pokaži oznake':'Skrij oznake';
+    if(!on)lb.querySelectorAll('.lab.rev').forEach(function(l){l.classList.remove('rev')})});
+  document.querySelectorAll('.b-zoom').forEach(function(b){b.addEventListener('click',function(){var f=b.closest('.fig');
+    lbb.innerHTML='';lbb.appendChild(f.querySelector('svg').cloneNode(true));document.getElementById('lbcap').textContent=f.querySelector('.fn').textContent;
+    lb.classList.remove('quiz');lbq.textContent='Skrij oznake';lb.hidden=false;body.style.overflow='hidden'})});
+  var nb=document.getElementById('navbtn');
+  nb.addEventListener('click',function(){var on=!body.classList.contains('navopen');body.classList.toggle('navopen',on);nb.setAttribute('aria-expanded',on)});
+  document.querySelectorAll('nav.side a').forEach(function(a){a.addEventListener('click',function(){body.classList.remove('navopen');nb.setAttribute('aria-expanded','false')})});
+  var links={};document.querySelectorAll('.nl ol a').forEach(function(a){links[a.getAttribute('href').slice(1)]=a});
+  if('IntersectionObserver' in window){var cur=null;var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var a=links[e.target.id];if(a){if(cur)cur.classList.remove('on');a.classList.add('on');cur=a}}})},{rootMargin:'-60px 0px -70% 0px'});
+    document.querySelectorAll('h2[id]').forEach(function(h){io.observe(h)})}
+})();
+</script>
