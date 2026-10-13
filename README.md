@@ -19,3 +19,9 @@ https://claude.ai/artifact/DHnTZiPokgbPsotW8aSkhf — ta repo je varnostna kopij
 2. **Slikovni slovar** na koncu vsakega predavanja: pokrij desni stolpec tabele in povej pomen, nato poišči strukturo na sliki.
 3. **Izpit**: izbirna vprašanja, kratki odgovori, **skice struktur** in **latinska imena** – vadi risanje (celica, humerus, vretence).
 4. Pri mišicah vedno isti vrstni red: **origo → insertio → gib → oživčenje**.
+
+## PDF za učenje
+
+**[pdf/Anatomija-zapiski-1-4.pdf](pdf/Anatomija-zapiski-1-4.pdf)** – vsi zapiski predavanj 1–4 (136 strani, A4) s slikovnim atlasom: 176 slik, na vsaki so s črtami označene strukture, ki jih moraš znati. Barva črte pove vrsto strukture (kost, mišica, sklep/vez, živec/žila, tkivo, smer).
+
+Skripte za ponovno generiranje so v `pdf/vir/` (oznake slik so v `ann1.py`–`ann4.py`).

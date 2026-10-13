@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="sl">
+<head>
+<meta charset="utf-8">
+<title>Anatomija s histologijo – zapiski 1–4</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,600&family=IBM+Plex+Sans+Condensed:ital,wght@0,400;0,500;0,600;1,400;1,500&display=block" rel="stylesheet">
+<style>
+:root{
+  --ink:#1d1b18; --ink2:#55504a; --rule:#d9d4c7; --paper:#fffdf8; --tint:#f6f2e8;
+  --a:#2563a6; --a-soft:#e7eef7;
+}
+.ch1{--a:#2563a6;--a-soft:#e8eff8}
+.ch2{--a:#a8661a;--a-soft:#f8eedf}
+.ch3{--a:#b0362b;--a-soft:#f8e6e3}
+.ch4{--a:#2f7457;--a-soft:#e3f1ea}
+
+@page{size:A4;margin:17mm 16mm 18mm 16mm;
+  @bottom-right{content:counter(page);font:500 8.5pt 'IBM Plex Sans Condensed';color:#8a8378}
+  @bottom-left{content:"Anatomija s histologijo · 1. letnik";font:400 8pt 'IBM Plex Sans Condensed';color:#a39c90}
+}
+@page:first{margin:0;@bottom-right{content:none}@bottom-left{content:none}}
+*{box-sizing:border-box}
+html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+body{margin:0;font-family:'Source Serif 4',Georgia,serif;font-size:10.2pt;line-height:1.48;color:var(--ink);background:#fff;
+  font-variant-numeric:oldstyle-nums proportional-nums;hyphens:auto;-webkit-hyphens:auto}
+strong{font-weight:700}
+em{font-style:italic}
+.ar{color:var(--a);font-weight:600}
+
+/* cover */
+.cover{height:297mm;padding:28mm 22mm 22mm;display:flex;flex-direction:column;background:var(--paper);break-after:page;position:relative}
+.cover .k{font:600 9pt 'IBM Plex Sans Condensed';letter-spacing:.16em;text-transform:uppercase;color:#8a8378}
+.cover h1{font-size:46pt;line-height:1.02;margin:10mm 0 0;font-weight:700;letter-spacing:-.01em}
+.cover h1 span{display:block;font-weight:400;font-style:italic;font-size:24pt;color:var(--ink2);margin-top:4mm;letter-spacing:0}
+.cover .bars{display:flex;gap:3mm;margin:14mm 0 0}
+.cover .bars div{flex:1;border-top:4px solid;padding-top:3mm;font:500 9.5pt 'IBM Plex Sans Condensed';color:var(--ink2)}
+.cover .bars b{display:block;font:700 22pt 'Source Serif 4';color:var(--ink);margin-bottom:1mm}
+.cover .how{margin-top:auto;display:grid;grid-template-columns:1fr 1fr;gap:6mm 10mm;font-size:9.6pt;color:var(--ink2)}
+.cover .how h4{font:600 8.5pt 'IBM Plex Sans Condensed';letter-spacing:.12em;text-transform:uppercase;color:var(--ink);margin:0 0 1.5mm}
+.cover .how p{margin:0}
+.cover .meta{margin-top:12mm;padding-top:4mm;border-top:1px solid var(--rule);display:flex;justify-content:space-between;font:400 8.5pt 'IBM Plex Sans Condensed';color:#8a8378}
+.key{display:flex;flex-wrap:wrap;gap:2mm 5mm;margin-top:2mm}
+.key span{display:inline-flex;align-items:center;gap:1.6mm;font:500 8.6pt 'IBM Plex Sans Condensed';color:var(--ink)}
+.key i{width:9px;height:9px;border-radius:50%;display:inline-block}
+
+/* toc */
+.toc{break-after:page}
+.toc>h2{font-size:22pt;margin:0 0 7mm;font-weight:700}
+.tc{display:grid;grid-template-columns:16mm 1fr;gap:4mm;padding:4mm 0 5mm;border-top:1px solid var(--rule)}
+.tcn{font:700 30pt/1 'Source Serif 4';color:var(--a)}
+.tc h3{margin:1mm 0 2mm;font-size:13pt}
+.tc ol{margin:0;padding:0;list-style:none;columns:2;column-gap:8mm;font-size:9.4pt}
+.tc li{break-inside:avoid;padding:.6mm 0;border-bottom:1px dotted #e4dfd3}
+.tc a{color:var(--ink);text-decoration:none}
+
+/* chapter */
+.chapter{break-before:page}
+.opener{display:grid;grid-template-columns:auto 1fr;gap:6mm;align-items:end;padding:0 0 6mm;margin-bottom:6mm;border-bottom:2.5px solid var(--a)}
+.onum{font:700 64pt/0.8 'Source Serif 4';color:var(--a)}
+.okick{font:600 8.5pt 'IBM Plex Sans Condensed';letter-spacing:.16em;text-transform:uppercase;color:var(--a)}
+.opener h1{margin:1mm 0 1mm;font-size:28pt;line-height:1.05}
+.osub{font-style:italic;color:var(--ink2);font-size:11pt}
+.lede{font-size:11pt;color:var(--ink2);font-style:italic;margin:0 0 5mm}
+
+h2{font-size:15pt;line-height:1.2;margin:8mm 0 3mm;break-after:avoid;color:var(--ink)}
+h2 .sn{display:inline-block;min-width:11mm;color:var(--a);font-weight:700}
+h2.gl{break-before:page;margin-top:0;padding:4mm 5mm;background:var(--a);color:#fff;border-radius:1.5mm;font-size:16pt}
+h2.gl + p{font-style:italic;color:var(--ink2)}
+h3{font:600 11.5pt/1.25 'Source Serif 4';margin:5mm 0 1.5mm;color:var(--a);break-after:avoid}
+h4{font:600 9pt 'IBM Plex Sans Condensed';letter-spacing:.08em;text-transform:uppercase;margin:4mm 0 1mm;break-after:avoid}
+p{margin:0 0 2.4mm;orphans:3;widows:3}
+ul,ol{margin:0 0 3mm;padding-left:5.5mm}
+li{margin:.6mm 0}
+ul>li::marker{color:var(--a)}
+ol>li::marker{color:var(--a);font-weight:700;font-family:'IBM Plex Sans Condensed'}
+li ul,li ol{margin:.8mm 0 1mm}
+
+table{width:100%;border-collapse:collapse;margin:2mm 0 4.5mm;font:400 8.9pt/1.36 'IBM Plex Sans Condensed';break-inside:auto}
+thead{display:table-header-group}
+tr{break-inside:avoid}
+th{text-align:left;font-weight:600;background:var(--a-soft);color:var(--ink);padding:1.6mm 2.2mm;border-bottom:1.5px solid var(--a)}
+td{padding:1.4mm 2.2mm;border-bottom:1px solid #e7e2d6;vertical-align:top}
+td:first-child{font-weight:500}
+table.gls td:first-child{font-style:italic;color:var(--a);font-weight:500;width:36%}
+table.gls tr:nth-child(even) td{background:#faf8f3}
+
+/* plates & figures */
+.plate{margin:5mm 0 3mm}
+.plate-h{display:flex;align-items:baseline;gap:3mm;border-bottom:1px solid var(--rule);padding-bottom:1.5mm;margin-bottom:2mm;break-after:avoid}
+.plate-h .pl{font:700 9pt 'IBM Plex Sans Condensed';color:#fff;background:var(--a);padding:.6mm 2mm;border-radius:1mm}
+.plate-h h3{margin:0;color:var(--ink);font-size:12.5pt}
+figure{margin:0 0 5mm;break-inside:avoid;page-break-inside:avoid}
+svg.fig{width:100%;height:auto;display:block}
+.lb{font:500 14.2px 'IBM Plex Sans Condensed'}
+.lb .la{font-weight:600}
+.lb .sl{fill:#3b3732;font-weight:400}
+figcaption{font-size:9pt;color:var(--ink2);line-height:1.38;padding:1.5mm 0 0 0;border-top:1px dashed #e4dfd3;margin:0 18mm}
+figcaption b{font:700 8.6pt 'IBM Plex Sans Condensed';color:var(--a);margin-right:1.2mm}
+.lgs{display:inline-flex;gap:3mm;margin-left:2.5mm;vertical-align:1px}
+.lg{display:inline-flex;align-items:center;gap:1.1mm;font:500 7.6pt 'IBM Plex Sans Condensed';color:#8a8378;white-space:nowrap}
+.lg i{width:6.5px;height:6.5px;border-radius:50%;display:inline-block}
+.nofig{font-size:9pt;color:var(--ink2);margin:0 18mm 4mm}
+.nofig b{font:700 8.6pt 'IBM Plex Sans Condensed';color:var(--a)}
+</style>
+</head>
+<body>
+<section class="cover">
+  <div class="k">Fizioterapija · 1. letnik · 2026/27</div>
+  <h1>Anatomija<br>s histologijo<span>zapiski predavanj 1–4 s slikovnim atlasom</span></h1>
+  <div class="bars">
+    <div style="border-color:#2563a6"><b>1</b>Uvod</div>
+    <div style="border-color:#a8661a"><b>2</b>Osteologija</div>
+    <div style="border-color:#b0362b"><b>3</b>Miologija I</div>
+    <div style="border-color:#2f7457"><b>4</b>Miologija II</div>
+  </div>
+  <div class="how">
+    <div><h4>Kako brati</h4><p>Zapiski sledijo prosojnicam po vrsti. Na koncu vsakega predavanja je <b>slikovni atlas</b>: slike s črtami do struktur, ki jih moraš znati, in tabela izrazov za samopreverjanje.</p></div>
+    <div><h4>Kako se učiti</h4><p>Pokrij desni stolpec tabele in povej pomen; nato strukturo poišči na sliki. Mišice vedno v istem redu: <b>origo → insertio → gib → oživčenje</b>.</p></div>
+    <div><h4>Izpit</h4><p>Izbirna vprašanja, kratki odgovori, <b>skice struktur</b> in <b>latinska imena</b>. Vadi risanje celice, humerusa in vretenca.</p></div>
+    <div><h4>Barve na slikah</h4><div class="key">
+      <span><i style="background:#2563a6"></i>smer / ravnina</span><span><i style="background:#b7791f"></i>kost</span>
+      <span><i style="background:#c0392b"></i>mišica</span><span><i style="background:#0f8a7e"></i>sklep / vez</span>
+      <span><i style="background:#7b3fa0"></i>živec / žila</span><span><i style="background:#3f7d20"></i>tkivo / celica</span>
+      <span><i style="background:#4a5568"></i>drugo</span></div></div>
+  </div>
+  <div class="meta"><span>doc. dr. Jure Urbančič, dr. med. · Alma Mater Europaea</span><span>Enej · oktober 2026</span></div>
+</section>
+<section class="toc"><h2>Vsebina</h2>{{TOC}}</section>
+{{CHAPTERS}}
+</body>
+</html>
