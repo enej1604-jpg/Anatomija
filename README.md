@@ -26,8 +26,8 @@ https://claude.ai/artifact/DHnTZiPokgbPsotW8aSkhf — ta repo je varnostna kopij
 
 Vsi zapiski predavanj 1–4 s 175 slikami, ki stojijo ob besedilu, ki ga razlagajo (ne v ločenem albumu). Oznake so ponovno preverjene na vsaki sliki. Kviz način skrije imena (klikni vprašaj za odgovor), gumb »Pokrij tabele« skrije pomene za ponavljanje, barvni gumbi filtrirajo vrste struktur.
 
-## PDF za učenje (starejša verzija)
+## PDF za učenje
 
-**[pdf/Anatomija-zapiski-1-4.pdf](pdf/Anatomija-zapiski-1-4.pdf)** – vsi zapiski predavanj 1–4 (136 strani, A4) s slikovnim atlasom: 176 slik, na vsaki so s črtami označene strukture, ki jih moraš znati. Barva črte pove vrsto strukture (kost, mišica, sklep/vez, živec/žila, tkivo, smer).
+**[pdf/Anatomija-zapiski-1-4.pdf](pdf/Anatomija-zapiski-1-4.pdf)** – vsi zapiski predavanj 1–4 (142 strani, A4) s slikovnim atlasom: 175 slik ob besedilu, ki ga razlagajo, z enakimi preverjenimi oznakami kot atlas. Barva črte pove vrsto strukture (kost, mišica, sklep/vez, živec/žila, tkivo, smer).
 
 Skripte za ponovno generiranje so v `pdf/vir/` (oznake slik so v `ann1.py`–`ann4.py`).
